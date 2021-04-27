@@ -3,7 +3,7 @@
   "name": "LogoMaker by Themeisle",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicon_128x128.ico",
       "sizes": "128x128 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
@@ -13,32 +13,40 @@
       "sizes": "192x192"
     },
     {
-      "src": "logo-complet_3602x360.png",
-      "type": "image/png",
-      "sizes": "360x360"
-    },
-    {
-      "src": "logo-complet_512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    },
-    {
-      "src": "maskable_icon_x512.png",
+      "src": "maskable_icon.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
       "src": "logo-complet_1024x1024.png",
       "type": "image/png",
       "sizes": "1024x1024"
-    },
+    }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "description": "Simple app for creating logos for your website.",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "orientation": "portrait-primary",
   "categories": ["logo", "maker", "themeisle"],
-  "lang": "en"
+  "lang": "en",
+  "screenshots": [
+    {
+      "src": "ss1.png",
+      "type": "image/png",
+      "sizes": "657x1421"
+    },
+    {
+      "src": "ss2.png",
+      "type": "image/png",
+      "sizes": "656x1430"
+    },
+    {
+      "src": "ss3.png",
+      "type": "image/png",
+      "sizes": "658x1427"
+    }
+  ]
 }
