@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
@@ -10,10 +11,18 @@
     "@types/node": "^12.20.10",
     "@types/react": "^16.14.5",
     "@types/react-dom": "^16.9.12",
+    "body-scroll-lock": "^3.1.5",
+    "classnames": "^2.3.1",
+    "jszip": "^3.6.0",
+    "pullstate": "^1.22.1",
     "react": "^17.0.2",
+    "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.0",
     "typescript": "^4.2.4",
+    "uuid": "^8.3.2",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
@@ -30,6 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-sw": "http-server ./build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,5 +61,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgdotjs/svg.js": "^3.0.16",
+    "@types/loadable__component": "^5.13.3",
+    "@types/react-color": "^3.0.4",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-select": "^4.0.15",
+    "@types/uuid": "^8.3.0",
+    "http-server": "^0.12.3",
+    "sass": "^1.32.11"
   }
 }

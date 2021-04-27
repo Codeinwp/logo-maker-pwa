@@ -1,0 +1,197 @@
+@use "../common.scss" as default;
+@use "download-button.scss" as dlButton;
+@use "select-colors.scss" as sc;
+@use "select-layout.scss" as sly;
+@use "select-logo.scss" as sl;
+@use "select-typography.scss" as st;
+@import "../constants";
+
+.logo-creator {
+	&.logo-maker-container {
+		@include default.logo-maker-container;
+	}
+	position: static;
+	display: flex;
+	flex-direction: column;
+
+	@media(min-width: 1024px) {
+		position: relative;
+	}
+	.download-section {
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		.download-button {
+			@include dlButton.download-button;
+		}
+
+	}
+
+	.top-section {
+		@include default.top-section;
+		@media (max-width:1023px) {
+			.back {
+				left: 30px;
+			}
+		}
+	}
+
+	.rendering-section {
+		visibility: hidden;
+	}
+
+    .main-section {
+		margin-top: 100px;
+		.main-container {
+			display: flex;
+			flex-direction: column;
+
+
+			@media(min-width: 1024px) {
+				flex-direction: row;
+			}
+
+			.left-menu {
+				display: flex;
+				justify-content: flex-start;
+				width: 30%;
+				padding: 0 20px 0 10px;
+				.options {
+					display: flex;
+					flex-direction: column;
+					.option {
+						display: flex;
+						margin-bottom: 30px;
+						button, a {
+							display: grid;
+							grid-template-columns: auto auto;
+							column-gap: 10px;
+							align-items: center;
+							justify-content: center;
+							align-content: center;
+							font-weight: 500;
+							font-size: 16px;
+							line-height: 22px;
+							background-color: transparent;
+							border: none;
+							padding: 0;
+							margin-left: 15px;
+							color: #8B8B9C;
+							transition: $transition;
+							cursor: pointer;
+							&.active {
+								color: #333333;
+							}
+							&:focus {
+								outline: none;
+							}
+						}
+					}
+				}
+			}
+
+			.logo {
+				display: flex;
+				justify-content: center;
+				#image-logo {
+					padding: 30px;
+					background: #F5F7F9;
+				}
+				height: max-content;
+			}
+
+			.right-menu {
+				padding: 0 0 0 30px;
+				display: flex;
+				width: 40%;
+
+				.select-logo {
+					@include sl.select-logo;
+				}
+
+				.select-typography {
+					@include st.select-typography;
+				}
+
+				.select-layout {
+					@include sly.select-layout;
+				}
+
+				.select-colors {
+					@include sc.select-colors;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1440px) {
+	#image-logo svg {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+@media (max-width: 1023px) {
+	.logo-creator {
+		.top-section {
+			position: static;
+		}
+		.download-section {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			background: #fff;
+			padding: 25px 30px;
+			z-index: 100;
+			.download-button button {
+				width: 100%;
+				padding: 7px;
+			}
+		}
+		.main-section {
+			margin-top: 60px;
+			.main-container {
+				.logo {
+					margin-bottom: 30px;
+					#image-logo {
+						padding: 0;
+					}
+				}
+				.right-menu {
+					width: 100%;
+					padding: 0;
+					margin-bottom: 100px;
+					.select-colors,
+					.select-layout {
+						width: 100%;
+						.options button {
+							width: 100%;
+						}
+					}
+				}
+				.left-menu {
+					width: 100%;
+					padding: 0;
+					.options {
+						flex-direction: row;
+						flex-wrap: wrap;
+						width: 100%;
+						.option {
+							flex-basis: 46%; /* This will work for phone with width 320 like S9 */
+						}
+					}
+				}
+			}
+			@media (max-width: 600px) {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+@media (max-width: 360px) {
+	.logo-creator .main-section .container .left-menu .options .option button {
+		margin-left: 5px;
+	}
+}

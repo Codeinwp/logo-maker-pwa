@@ -1,0 +1,147 @@
+@import "constants";
+
+@mixin logo-maker-container {
+	max-width: 1470px;
+	margin: 15px auto;
+	font-family: $noto;
+	@media (max-width: 1440px) {
+		max-width: 90%;
+	}
+	@media (max-width: 600px) {
+		max-width: 100%;
+		margin: 15px 15px;
+	}
+	@media (max-width: 350px) {
+		max-width: 100%;
+		margin: 15px 3px;
+	}
+}
+
+@mixin back {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	visibility: visible;
+	a {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		p {
+			color: #585858;
+			text-transform: uppercase;
+			font-size: 14px;
+			font-weight: 600;
+			margin-left: 13px;
+			padding-bottom: 0px;
+			margin-bottom: 0px;
+			margin-top: 0px;
+		}
+	}
+	@media(max-width: 600px) {
+		visibility: hidden;
+	}
+}
+
+@mixin next {
+	text-align: center;
+	a {
+		color: #fff;
+		background-color: $light-blue;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 700;
+		line-height: 36px;
+		padding: 14px 80px;
+		border-radius: 4px;
+	}
+	@media (max-width: 600px) {
+		a {
+			display: block;
+			padding: 7px;
+		}
+	}
+}
+
+@mixin logo-holder {
+	display: inline-flex;
+	
+	img {
+		max-width: 134px;
+		max-height: 44px;
+	}
+
+	a {
+		max-height: 44px;
+	}
+
+	.logo-maker-name {
+		margin-top: 2.5px;
+		height: 44px;
+		line-height: 24.52px;
+		display: inline-grid;
+		align-content: center;
+		font-size: 28px;
+		font-weight: 700;
+		color: $orange;
+		margin: 1px 0 0 4px;
+	}
+
+	@media (max-width: 600px) {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@mixin top-section {
+	position: relative;
+	text-align: center;
+	.back {
+		@include back;
+	}
+	.logo-holder {
+		@include logo-holder;
+	}
+	@media (max-width: 600px) {
+		text-align: left;
+	}
+}
+
+@mixin content-section-titles {
+	margin-top: 115px;
+	.titles {
+		text-align: center;
+		h1 {
+			color: $blue;
+			font-size: 36px;
+			font-weight: 700;
+			line-height: 49.03px;
+			margin: 0 0 8px;
+
+			@media (max-width: 600px) {
+				line-height: 32.69px;
+			}
+		}
+		p {
+			color: #939393;
+			font-size: 18px;
+			font-weight: 500;
+			line-height: 24.52px;
+			margin: 0;
+		}
+	}
+	@media (max-width: 600px) {
+		margin-top: 60px;
+		.titles {
+			text-align: left;
+			h1 {
+				font-size: 24px;
+			}
+			p {
+				font-size: 16px;
+				color: #393939;
+			}
+		}
+	}
+}

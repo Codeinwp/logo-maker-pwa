@@ -1,0 +1,33 @@
+@import "constants";
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+/* Hacks for WordPress*/
+.single-page-container, main {
+    background-color: white;
+}
+
+footer {
+    display: none;
+}
+
+.copyright {
+    display: none;
+}
+
+.svg-animations {
+    transition: all 0.3s ease-out;
+}
