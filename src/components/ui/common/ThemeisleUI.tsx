@@ -12,7 +12,7 @@ const ThemeisleUI: React.FunctionComponent<unknown> = () => {
                     alt="Themeisle Logo"
                 ></img>
             </a> */}
-            <a className="logo-maker-name">LogoMaker</a>
+            <a className="logo-maker-name">LogoMaker <span>Beta</span></a>
         </div>
     )
 }
