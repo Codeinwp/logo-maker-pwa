@@ -180,16 +180,44 @@
 					padding: 0;
 					.options {
 						flex-direction: row;
-						flex-wrap: wrap;
+						justify-content: center;
+						// flex-wrap: wrap;
 						width: 100%;
 						.option {
-							flex-basis: 46%; /* This will work for phone with width 320 like S9 */
+							border: 2px solid #aaa;
+							border-radius: 10%;
+							// flex-basis: 46%; /* This will work for phone with width 320 like S9 */
+							padding: 5px 20px;
+							margin-right: 20px;
+							margin-bottom: 10px;
+
+							@media (max-width: 600px) {
+								margin-right: 10px;
+								padding: 3px 15px;
+							}
+							a {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								margin: 0px;
+								span {
+									display: none;
+								}
+							}
+
+							&.active {
+								border-color: $light-blue;
+							}
 						}
 					}
 				}
 			}
 			@media (max-width: 600px) {
+				margin-top: 10px;
+			}
+			@media (max-width: 1023px) {
 				margin-top: 20px;
+
 			}
 		}
 	}

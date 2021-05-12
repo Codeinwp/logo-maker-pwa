@@ -157,7 +157,7 @@ const Creator: React.FunctionComponent<unknown> = () => {
                 <div className="main-container">
                     <div className="left-menu">
                         <div className="options">
-                            <div className="option">
+                            <div className={classnames({ active: menuOption === "logo" }, "option")}>
                                 <a
                                     id="btn-select-logo"
                                     onClick={() => {
@@ -173,10 +173,12 @@ const Creator: React.FunctionComponent<unknown> = () => {
                                     className={classnames({ active: menuOption === "logo" })}
                                 >
                                     <LogoUIsvg isSelected={menuOption === "logo"} />
-                                    Logo
+                                    <span>
+                                        Logo
+                                    </span>
                                 </a>
                             </div>
-                            <div className="option">
+                            <div className={classnames({ active: menuOption === "typography" }, "option")} >
                                 <a
                                     id="btn-select-typography"
                                     onClick={() => {
@@ -191,10 +193,12 @@ const Creator: React.FunctionComponent<unknown> = () => {
                                     className={classnames({ active: menuOption === "typography" })}
                                 >
                                     <TypographyUIsvg isSelected={menuOption === "typography"} />
-                                    Typography
+                                    <span>
+                                        Typography
+                                    </span>
                                 </a>
                             </div>
-                            <div className="option">
+                            <div className={classnames({active: menuOption === "layout" }, "option")}>
                                 <a
                                     id="btn-select-layout"
                                     onClick={() => {
@@ -209,10 +213,12 @@ const Creator: React.FunctionComponent<unknown> = () => {
                                     className={classnames({ active: menuOption === "layout" })}
                                 >
                                     <LayoutUIsvg isSelected={menuOption === "layout"} />
-                                    Layout
+                                    <span>
+                                        Layout
+                                    </span>
                                 </a>
                             </div>
-                            <div className="option">
+                            <div className={classnames({active: menuOption === "colors" }, "option")}>
                                 <a
                                     id="btn-select-colors"
                                     onClick={() => {
@@ -227,7 +233,9 @@ const Creator: React.FunctionComponent<unknown> = () => {
                                     className={classnames({ active: menuOption === "colors" })}
                                 >
                                     <ColorsUIsvg isSelected={menuOption === "colors"} />
-                                    Colors
+                                    <span>
+                                        Colors
+                                    </span>
                                 </a>
                             </div>
                         </div>
