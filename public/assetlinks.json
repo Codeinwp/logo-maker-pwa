@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "com.amplifyapp.d2ucns50zireip.main.twa",
+                   "sha256_cert_fingerprints": ["55:0A:9E:78:20:DC:D6:01:5E:E0:15:BF:AB:44:67:06:48:51:DE:02:55:3A:DD:67:1D:69:B5:85:CE:41:C1:63"] }
+    }]
