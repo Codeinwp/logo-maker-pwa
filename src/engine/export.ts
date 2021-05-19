@@ -40,13 +40,14 @@ export function generateCanvasFromSVG(svg: SVGElement): Promise<HTMLCanvasElemen
             resolve(canvas)
         }
 
-        img.onerror = () => {
-            console.log("Image not found")
-
+        img.onerror = (ev: string | Event) => {
             // This will work even in Safari for Mac & iOS
             if (!safariWasUsed) {
                 img.src = "data:image/svg+xml," + svg.outerHTML
                 safariWasUsed = true
+                console.info("One day Apple will solve this.")
+            } else {
+                console.warn("Image not found", ev)
             }
         }
 
@@ -407,21 +408,38 @@ export async function downloadAsZipFromSVGviaLinkBlob(
 
 export async function createDownloadLinkPipeline(
     dispatch: React.Dispatch<DownLoadLinkAction>,
-    input: InputSVG[]
+    input: InputSVG[],
+    type: "svg" | "png" | "zip"
 ): Promise<void> {
-    const link = await downloadAsZipFromSVGviaLinkBlob(input, ["png"], true)
+    let link = ""
+
+    switch (type) {
+        case "zip":
+            link = await downloadAsZipFromSVGviaLinkBlob(input, ["png"], true)
+            break
+        case "png":
+            link = (await generateCanvasFromSVG(input[0].svg)).toDataURL("image/png")
+            break
+        case "svg":
+            link = exportAsSVGfromDOMviaLink(input[0].svg)
+            break
+    }
     dispatch({ type: "publish", value: link })
 }
 
-export function downloadZip(downloadLink: string): void {
+export function download(downloadLink: string, extensions?: string): void {
+    if (downloadLink.length === 0) {
+        return
+    }
     const a = document.createElement("a")
 
     a.style.display = "none"
     a.href = downloadLink
-    a.download = "logo.zip"
+    a.download = `logo.${extensions || "zip"}`
 
     document.body.appendChild(a)
     a.click()
+    document.body.removeChild(a)
 
     // fetch(props.downloadLink.url)
     //     .then((res) => console.log(res))
